@@ -37,7 +37,7 @@ Soon after installing DokuWiki in OpenShift, next step is to call the installati
 
 http://dokuwiki-$yourlogin.rhcloud.com/install.php
 
-After entering values for in the install page and saving it, we should remove the install.php file which is no longer required. Issue the following command in the command line in order to remove the install.php file.
+After entering values in the install page and saving it, we should remove the install.php file which is no longer required. Issue the following command in the command line in order to remove the install.php file.
 
 cd dokuwiki/php
 git rm install.php
