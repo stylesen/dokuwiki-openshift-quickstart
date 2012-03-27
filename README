@@ -11,14 +11,13 @@ Create an account at http://openshift.redhat.com/
 
 Create a PHP application
 
-       rhc-create-app -a dokuwiki -t php-5.3 -l $USERNAME
+       rhc app create -a dokuwiki -t php-5.3
 
 NOTE: DokuWiki does not require a database, hence there is no need to add additional catridges such as MySQL.
 
 Add this upstream DokuWiki quickstart repo
 
-    cd dokuwiki/php
-    rm -rf *
+    cd dokuwiki
     git remote add upstream -m master git://github.com/stylesen/dokuwiki-openshift-quickstart.git
     git pull -s recursive -X theirs upstream master
 
@@ -26,24 +25,26 @@ Then push the repo upstream to OpenShift
 
      git push
 
-Your application is up and running at the following URL:
+Configuring DokuWiki
+--------------------
+
+Soon after installing DokuWiki in OpenShift, next step is to change the default values provided (the install script is already run for you with some defaults). In order to change the default values first login to the new instance by visiting the following URL:
+
+     http://dokuwiki-$yourlogin.rhcloud.com/doku.php?do=login
+
+     Username:  admin
+     Password:  admin
+
+After login, navigate to 'Edit user' page as follows and change the default values:
+
+      Admin -> User Manager -> admin -> Edit user
+
+Once you have changed the default values for admin user, save the changes.
+
+Next step is to change default values for DokuWiki site, which could be done by visiting the following URL:
+
+     http://dokuwiki-stylesen.rhcloud.com/doku.php?id=start&do=admin&page=config
+
+Logout, and visit the following URL, where your new DokuWiki site is up and running:
 
      http://dokuwiki-$yourlogin.rhcloud.com
-
-Running the install script
---------------------------
-
-Soon after installing DokuWiki in OpenShift, next step is to call the installation script. In order to invoke the script visit the following URL:
-
-     http://dokuwiki-$yourlogin.rhcloud.com/install.php
-
-After entering values in the install page and saving it, we should remove the install.php file which is no longer required. Issue the following command in the command line in order to remove the install.php file.
-
-     cd dokuwiki/php
-     git rm install.php
-     git commit -a -m 'Remove install.php which is no longer required.'
-     git push
-
-Now DokuWiki is ready for business and you can visit and edit contents in the following URL:
-
-    http://dokuwiki-$yourlogin.rhcloud.com
