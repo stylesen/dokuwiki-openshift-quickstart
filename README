@@ -35,7 +35,7 @@ Soon after installing DokuWiki in OpenShift, next step is to change the default 
      Username:  admin
      Password:  admin
 
-After login, navigate to 'Edit user' page as follows and change the default values (Do not forget to get a new value for 'Password'):
+After login, navigate to 'Edit user' page as follows and change the default values (Do not forget to put a new value for 'Password'):
 
       Admin -> User Manager -> admin -> Edit user
 
