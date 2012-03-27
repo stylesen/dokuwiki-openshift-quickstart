@@ -28,18 +28,18 @@ Then push the repo upstream to OpenShift
 Configuring DokuWiki
 --------------------
 
-Soon after installing DokuWiki in OpenShift, next step is to change the default values provided (the install script is already run for you with some defaults). In order to change the default values first login to the new instance by visiting the following URL:
+Soon after installing DokuWiki in OpenShift, next step is to change the default values provided (the install script is already run for you with some defaults). In order to change the default values, login to the new instance by visiting the following URL:
 
      http://dokuwiki-$yourlogin.rhcloud.com/doku.php?do=login
 
      Username:  admin
      Password:  admin
 
-After login, navigate to 'Edit user' page as follows and change the default values:
+After login, navigate to 'Edit user' page as follows and change the default values (Do not forget to get a new value for 'Password'):
 
       Admin -> User Manager -> admin -> Edit user
 
-Once you have changed the default values for admin user, save the changes.
+Once you have changed the default values for admin user, save the changes. Re-login with the new credentials (if you have changed them).
 
 Next step is to change default values for DokuWiki site, which could be done by visiting the following URL:
 
